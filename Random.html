@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="random.css">
+
+	 <!-- Angular -->
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+	<!--For the mobile user -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<div class="container">
+	
+	<div class="jumbotron">
+	<h1>Please use our Project: Gear Up Calculator to see your costs before making a donation!</h1>
+	<p>Be nice to this page, still working out some bugs :-)</p>
+</div>
+
+<div ng-app="formDude" ng-controller="myCtrl" class="formbro" align="center">
+<!-- Beginning multiple inline forms -->
+	
+	<form role="form" class="form-horizontal">
+	<!-- Open -->
+
+		<!-- FullBag -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="FullBag">Fully Stocked Bag?</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="FullBag" ng-change="changeThis()">
+		</div>
+	</div>
+
+		<!-- EmptyBag -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Bag">Regular Backpack:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="Bag" ng-change="changeThat()">
+		</div>
+
+		<!-- Total for Bag -->
+		  <label class="control-label col-sm-2" for="bagtotal">Total: {{(Bag*24) | currency : $ }} </label>
+	   </div>
+	   
+	   <!-- Crayons -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="crayons">Crayons:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="crayons" ng-change="changeThat()">
+		</div>
+	   
+	   <!-- Total for Crayons -->
+		  <label class="control-label col-sm-2" for="crayonstotal">Total: {{(crayons*2.77) | currency : $ }} </label>
+	   </div>
+	   
+	   <!-- Pencils -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="pencils">No. 2 Pencils:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="pencils" ng-change="changeThat()" align="right">
+		  </div>
+	   
+	   <!-- Total for Pencils -->
+		  <label class="control-label col-sm-2" for="pencilstotal">Total: {{(0.97 *pencils) | currency : $ }} </label>
+	   </div>
+	   
+	   <!-- Pens -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="pens">Pens:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="pens" ng-change="changeThat()">
+		  </div>
+	   
+	   <!-- Total for Pens -->
+		  <label class="control-label col-sm-2" for="penstotal">Total: {{(2.00 *pens) | currency : $ }} </label>
+	   </div>
+	   
+	   <!-- Erasers -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Erasers">Erasers:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="erasers" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for Erasers -->
+		  <label class="control-label col-sm-2" for="Eraserstotal">Total: {{(2.50 *erasers) | currency : $ }} </label>
+	   </div>
+
+	   <!-- Highlighters -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Highlighters">Highlighters:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="Highlighters" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for Highlighters -->
+		  <label class="control-label col-sm-2" for="Highlighterstotal">Total: {{(3.75 *Highlighters) | currency : $ }} </label>
+	   </div>
+
+	   <!-- Binders -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Binders">Binders:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="Binders" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for Binders -->
+		  <label class="control-label col-sm-2" for="Binderstotal">Total: {{(4.23 *Binders) | currency : $ }} </label>
+	   </div>
+
+	   <!-- IndexCards -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="IndexCards">IndexCards:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="IndexCards" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for IndexCards -->
+		  <label class="control-label col-sm-2" for="IndexCardstotal">Total: {{(2.00 *IndexCards) | currency : $ }} </label>
+	   </div>
+
+	   <!-- Rulers -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Rulers">Rulers:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="Rulers" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for Rulers -->
+		  <label class="control-label col-sm-2" for="Rulerstotal">Total: {{(2.00 *Rulers) | currency : $ }} </label>
+	   </div>
+
+	   <!-- GraphPaper -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="GraphPaper">GraphPaper:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="GraphPaper" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for GraphPaper -->
+		  <label class="control-label col-sm-2" for="GraphPapertotal">Total: {{(3.99 *GraphPaper) | currency : $ }} </label>
+	   </div>
+
+	   <!-- WhiteOut -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="WhiteOut">WhiteOut:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="WhiteOut" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for WhiteOut -->
+		  <label class="control-label col-sm-2" for="WhiteOuttotal">Total: {{(2.83 *WhiteOut) | currency : $ }} </label>
+	   </div>
+	
+	<!-- Notebook -->
+	   <div class="form-group">
+		  <label class="control-label col-sm-2" for="Notebook">Notebook:</label>
+		  <div class="col-xs-2">
+		  <input placeholder="Enter Quantity" type="number" class="form-control" ng-model="Notebook" ng-change="changeThat()">
+	   </div>
+	   
+	   <!-- Total for Notebook -->
+		  <label class="control-label col-sm-2" for="Notebooktotal">Total: {{(0.17 *Notebook) | currency : $ }} </label>
+	   </div>
+
+	   <!-- Total for Everything -->
+	   <div class="form-group">
+	   	  <input type="hidden" class="form-control" ng-model="grand">
+		  <label class="control-label col-sm-2" for="grandtotal">Grand Total: {{grand | currency : $ }}</label>
+	   </div>
+		
+	   <!-- Let's send an email and send them to PayPal! -->
+	   <button type="submit" class="btn btn-danger" onclick="window.location='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=58DXQL5FUUKL6'">Take Me to PayPal!</button>
+
+	<!-- Form about to close -->
+	</form>
+	
+</div>
+</div>
+
+<script src="random.js"></script>
+</body>
+
+</html>
